@@ -764,6 +764,317 @@ img { max-width: 100%; display: block; }
 
 .footer__top:hover { color: var(--monet-lavender-deep); }
 
+/* === IMPRESSION — Opening Sequence === */
+.intro {
+	position: fixed;
+	top: 0; left: 0;
+	width: 100%; height: 100%;
+	z-index: 9999;
+	overflow: hidden;
+	background: linear-gradient(180deg, #e5d8cc 0%, #d8c8b4 30%, #e8d4bc 60%, #f5f0eb 100%);
+	animation: intro-fade 1s ease-in 5s forwards;
+}
+
+@keyframes intro-fade {
+	0% { opacity: 1; pointer-events: all; }
+	100% { opacity: 0; pointer-events: none; }
+}
+
+/* === SKY & CLOUDS === */
+.intro__sky {
+	position: absolute;
+	top: 0; left: 0;
+	width: 100%; height: 55%;
+	margin-bottom: var(--space-xl);
+}
+
+.intro__cloud {
+	position: absolute;
+	border-radius: 50%;
+	background: radial-gradient(ellipse, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 70%);
+	filter: blur(20px);
+}
+
+.intro__cloud--a {
+	width: 300px; height: 180px;
+	top: 5%; left: -300px;
+	animation: cloud-drift-a 8s ease-out forwards;
+	opacity: 0.7;
+}
+
+.intro__cloud--b {
+	width: 200px; height: 120px;
+	top: 15%; left: -200px;
+	animation: cloud-drift-b 8s ease-out 0.5s forwards;
+	opacity: 0.5;
+}
+
+.intro__cloud--c {
+	width: 250px; height: 150px;
+	top: 8%; left: -250px;
+	animation: cloud-drift-c 8s ease-out 1s forwards;
+	opacity: 0.6;
+}
+
+@keyframes cloud-drift-a {
+	0% { transform: translateX(0); }
+	100% { transform: translateX(calc(100vw + 600px)); }
+}
+
+@keyframes cloud-drift-b {
+	0% { transform: translateX(0); }
+	100% { transform: translateX(calc(100vw + 400px)); }
+}
+
+@keyframes cloud-drift-c {
+	0% { transform: translateX(0); }
+	100% { transform: translateX(calc(100vw + 500px)); }
+}
+
+/* === FIGURE: Woman with Parasol === */
+.intro__figure {
+	position: absolute;
+	bottom: 30%;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 320px;
+	height: 480px;
+	animation: figure-fade 3s ease-out 0.5s forwards;
+}
+
+@keyframes figure-fade {
+	0% { opacity: 0; }
+	60% { opacity: 1; }
+	100% { opacity: 1; }
+}
+
+/* --- Parasol --- */
+.intro__parasol {
+	position: absolute;
+	top: 0; left: 50%;
+	transform: translateX(-50%);
+	width: 200px;
+	height: 80px;
+	border-radius: 100px 100px 0 0;
+	background: radial-gradient(ellipse at 30% 50%, #a8b5a0 0%, var(--monet-sage-deep) 40%, #7a8a6a 100%);
+	box-shadow: 4px 6px 20px rgba(143, 160, 136, 0.3);
+	animation: parasol-wave 1.5s ease-in-out infinite alternate;
+	transform-origin: bottom center;
+	opacity: 0.85;
+}
+
+/* Parasol inner highlights (sun light through green) */
+.intro__parasol::before {
+	content: '';
+	position: absolute;
+	top: 8px; left: 15%;
+	width: 12px; height: 40px;
+	background: rgba(255, 255, 255, 0.25);
+	border-radius: 50%;
+	filter: blur(4px);
+}
+
+.intro__parasol::after {
+	content: '';
+	position: absolute;
+	top: 0; left: 50%;
+	transform: translateX(-50%);
+	width: 6px;
+	height: 100px;
+	background: linear-gradient(180deg, var(--monet-sage-deep), rgba(143, 160, 136, 0.3));
+	border-radius: 0 0 3px 3px;
+}
+
+@keyframes parasol-wave {
+	0% { transform: translateX(-50%) rotate(-3deg); }
+	100% { transform: translateX(-50%) rotate(4deg); }
+}
+
+/* --- White Dress --- */
+.intro__dress {
+	position: absolute;
+	top: 100px; left: 50%;
+	transform: translateX(-55%);
+	width: 90px;
+	height: 280px;
+	background: linear-gradient(180deg, 
+		rgba(255, 255, 255, 0.95) 0%,
+		rgba(245, 240, 235, 0.8) 30%,
+		rgba(235, 228, 216, 0.6) 70%,
+		rgba(230, 220, 208, 0.3) 100%
+	);
+	border-radius: 45px 40px 30px 35px;
+	animation: dress-wave 1.5s ease-in-out infinite alternate;
+	transform-origin: top center;
+	opacity: 0.85;
+	/* Dress folds - brush strokes */
+	box-shadow: 
+		inset 8px 0 12px rgba(184, 169, 212, 0.15),
+		inset -5px 20px 15px rgba(212, 184, 150, 0.12),
+		3px 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.intro__dress::before {
+	content: '';
+	position: absolute;
+	top: 40px; left: 15px;
+	width: 30px;
+	height: 180px;
+	background: linear-gradient(180deg, rgba(212, 160, 160, 0.08), transparent);
+	border-radius: 50%;
+	filter: blur(8px);
+}
+
+.intro__dress::after {
+	content: '';
+	position: absolute;
+	top: 60px; right: 10px;
+	width: 25px;
+	height: 120px;
+	background: linear-gradient(180deg, rgba(168, 181, 160, 0.1), transparent);
+	border-radius: 50%;
+	filter: blur(6px);
+}
+
+@keyframes dress-wave {
+	0% { transform: translateX(-55%) skewX(-1.5deg); }
+	100% { transform: translateX(-55%) skewX(1deg); }
+}
+
+/* --- Hair suggestion --- */
+.intro__hair {
+	position: absolute;
+	top: 75px; left: 50%;
+	transform: translateX(-42%);
+	width: 50px;
+	height: 60px;
+	background: radial-gradient(ellipse, 
+		rgba(184, 160, 130, 0.6) 0%,
+		rgba(160, 130, 100, 0.3) 50%,
+		transparent 80%
+	);
+	border-radius: 50%;
+	filter: blur(3px);
+	animation: hair-wave 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes hair-wave {
+	0% { transform: translateX(-42%) skewX(-2deg) translateY(0); }
+	100% { transform: translateX(-42%) skewX(3deg) translateY(-3px); }
+}
+
+/* === GRASS: Brush strokes === */
+.intro__grass {
+	position: absolute;
+	bottom: 0; left: 0;
+	width: 100%;
+	height: 35%;
+	overflow: hidden;
+}
+
+.intro__grass-stroke {
+	position: absolute;
+	bottom: 0;
+	width: 8px;
+	border-radius: 4px 4px 0 0;
+	animation: grass-sway 1.2s ease-in-out infinite alternate;
+	opacity: 0.7;
+}
+
+.intro__grass-stroke--1 {
+	left: 5%; height: 120px;
+	background: linear-gradient(0deg, var(--monet-sage-deep), var(--monet-sage));
+	animation-delay: 0s;
+}
+
+.intro__grass-stroke--2 {
+	left: 15%; height: 90px;
+	background: linear-gradient(0deg, var(--monet-pond-deep), var(--monet-pond));
+	animation-delay: 0.15s;
+}
+
+.intro__grass-stroke--3 {
+	left: 25%; height: 140px;
+	background: linear-gradient(0deg, var(--monet-sage-deep), var(--monet-sage));
+	animation-delay: 0.3s;
+}
+
+.intro__grass-stroke--4 {
+	left: 65%; height: 110px;
+	background: linear-gradient(0deg, var(--monet-sage-deep), #9aaa88);
+	animation-delay: 0.2s;
+}
+
+.intro__grass-stroke--5 {
+	left: 78%; height: 100px;
+	background: linear-gradient(0deg, var(--monet-gold-deep), var(--monet-gold));
+	animation-delay: 0.4s;
+}
+
+.intro__grass-stroke--6 {
+	left: 92%; height: 130px;
+	background: linear-gradient(0deg, var(--monet-pond-deep), var(--monet-pond-light));
+	animation-delay: 0.1s;
+}
+
+@keyframes grass-sway {
+	0% { transform: skewX(-3deg) scaleY(0.95); }
+	100% { transform: skewX(4deg) scaleY(1.05); }
+}
+
+/* === LIGHT FLASH (sun moment) === */
+.intro__flash {
+	position: absolute;
+	top: 40%; left: 60%;
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	background: radial-gradient(circle, rgba(255, 248, 220, 0.8) 0%, rgba(255, 248, 220, 0) 70%);
+	animation: flash-pulse 1.5s ease-out 2s forwards;
+	filter: blur(15px);
+}
+
+@keyframes flash-pulse {
+	0% { opacity: 0; transform: scale(0.5); }
+	20% { opacity: 1; transform: scale(1); }
+	40% { opacity: 0.8; transform: scale(1.3); }
+	60% { opacity: 1; transform: scale(1.8); }
+	100% { opacity: 1; transform: scale(4); }
+}
+
+/* === TEXT: "perception over precision" === */
+.intro__text {
+	position: absolute;
+	bottom: 15%;
+	left: 15%;
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+	opacity: 0;
+	animation: text-reveal 2s ease-out 3s forwards;
+}
+
+.intro__text-line {
+	font-family: var(--font-serif);
+	font-size: 3rem;
+	font-style: italic;
+	line-height: 1.1;
+	letter-spacing: -0.02em;
+	color: var(--text-primary);
+	opacity: 0.65;
+}
+
+.intro__text-line:nth-child(2) {
+	font-size: 1.8rem;
+	color: var(--monet-iris);
+	opacity: 0.8;
+}
+
+@keyframes text-reveal {
+	0% { opacity: 0; transform: translateY(30px); }
+	100% { opacity: 1; transform: translateY(0); }
+}
+
 /* === SCROLL REVEAL === */
 .reveal {
 	opacity: 1;
