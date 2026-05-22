@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Komi (Lucyy) — CFD / Community / Code</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+	<!-- === ATMOSPHERIC WASHES — they drift like light on water === -->
+	<div class="wash wash--lavender"></div>
+	<div class="wash wash--rose"></div>
+	<div class="wash wash--gold"></div>
+	<div class="wash wash--pond"></div>
+	<div class="wash wash--sage"></div>
+
+	<!-- === NAV — light as morning fog === -->
+	<nav class="nav" role="navigation" aria-label="Main navigation">
+		<div class="nav__inner">
+			<a href="#" class="nav__logo">komi<span>.</span></a>
+			<ul class="nav__links">
+				<li><a href="#about">About</a></li>
+				<li><a href="#projects">Projects</a></li>
+				<li><a href="#tokens">Design System</a></li>
+				<li><a href="#contact">Contact</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<!-- === HERO — no center, no command. An invitation to enter. === -->
+	<header class="hero">
+		<div class="container">
+			<div class="hero__content">
+				<div class="hero__label">Community Operator & Developer</div>
+				<h1 class="hero__title">
+					Building bridges between<br>
+					<span class="color color--lavender brush brush--lavender">communities</span> and
+					<span class="color color--rose brush brush--rose">code</span>
+				</h1>
+				<p class="hero__subtitle">
+					Where the science of markets meets the art of human connection — painting the landscape of digital communities, one stroke at a time.
+				</p>
+				<div class="hero__cta">
+					<a href="#projects" class="btn btn--wash">View Projects</a>
+					<a href="#about" class="btn btn--outline">Learn More</a>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<!-- === ABOUT === -->
+	<hr class="divider">
+	<section id="about" class="section reveal" aria-labelledby="about-title">
+		<div class="container">
+			<div class="section__label">About</div>
+			<h2 id="about-title" class="section__title">Not just a developer.<br>Not just a community manager.</h2>
+			<div class="section__body">
+				<p>
+					I'm Komi (go by Lucyy online). By day, I manage CA & LATAM trading communities. By night, I build Discord bots, scrape social data, and explore digital sociology.
+				</p>
+				<p style="margin-top: var(--space-lg)">
+					The unusual part? I combine skills most people keep separate:
+				</p>
+			</div>
+			<ul class="skills">
+				<li>
+					<span class="dot dot--lavender"></span>
+					<span><span class="skill-name">CFD / Trading</span> <span class="skill-desc">— Forex, indices, commodities markets</span></span>
+				</li>
+				<li>
+					<span class="dot dot--rose"></span>
+					<span><span class="skill-name">Python Automation</span> <span class="skill-desc">— bots, scrapers, pipeline tools</span></span>
+				</li>
+				<li>
+					<span class="dot dot--gold"></span>
+					<span><span class="skill-name">Community Operations</span> <span class="skill-desc">— multi-lingual (EN/ES/PT/中文) growth</span></span>
+				</li>
+				<li>
+					<span class="dot dot--sage"></span>
+					<span><span class="skill-name">Digital Sociology</span> <span class="skill-desc">— Bourdieu, structural analysis of online communities</span></span>
+				</li>
+			</ul>
+
+			<div class="quote-immersive">
+				<p class="quote-immersive__text">
+					"I paint like that, the way some people sing opera."
+				</p>
+				<div class="quote-immersive__source">— Claude Monet</div>
+			</div>
+
+			<div class="section__body">
+				<p>
+					This site is where those threads come together.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- === PROJECTS — flowing, not gridded === -->
+	<hr class="divider">
+	<section id="projects" class="section reveal" aria-labelledby="projects-title">
+		<div class="container">
+			<div class="section__label">Projects</div>
+			<h2 id="projects-title" class="section__title">Things I've built and maintain</h2>
+
+			<div class="projects-flow">
+				<article class="project-flow-card project-flow-card--purple">
+					<div class="card-header">
+						<span class="card__tag">Discord · Python</span>
+					</div>
+					<h3 class="project-flow-card__title">CFD Trading Discord Bot</h3>
+					<p class="project-flow-card__desc">
+						An all-in-one Discord bot for CFD communities — real-time alerts, community monitoring, and automated engagement tools. Built with discord.py, designed for multi-lingual audiences.
+					</p>
+				</article>
+
+				<article class="project-flow-card project-flow-card--rose">
+					<div class="card-header">
+						<span class="card__tag">Telegram · Webhook</span>
+					</div>
+					<h3 class="project-flow-card__title">Ultima Radar Monitor</h3>
+					<p class="project-flow-card__desc">
+						Keyword-based monitoring system for Telegram communities. Scans EN/ES/PT conversations for key topics and alerts Discord channels via webhook. Runs as a cron-scheduled pipeline.
+					</p>
+				</article>
+
+				<article class="project-flow-card project-flow-card--gold">
+					<div class="card-header">
+						<span class="card__tag">Lark · Browser Automation</span>
+					</div>
+					<h3 class="project-flow-card__title">CM Reader Pipeline</h3>
+					<p class="project-flow-card__desc">
+						Automated reading of Lark messages via CDP (Chrome DevTools Protocol), avoiding API approval processes. Feeds content into Discord for team coordination.
+					</p>
+				</article>
+
+				<article class="project-flow-card project-flow-card--sage">
+					<div class="card-header">
+						<span class="card__tag">Research · Writing</span>
+					</div>
+					<h3 class="project-flow-card__title">Digital Sociology Research</h3>
+					<p class="project-flow-card__desc">
+						Exploring how Bourdieu's Distinction theory maps onto online trading communities. Using scraped community data to analyze structural holes and social capital in CFD spaces.
+					</p>
+				</article>
+			</div>
+		</div>
+	</section>
+
+	<!-- === DESIGN TOKENS === -->
+	<hr class="divider">
+	<section id="tokens" class="section reveal" aria-labelledby="tokens-title">
+		<div class="container">
+			<div class="section__label">Design System</div>
+			<h2 id="tokens-title" class="section__title">This site IS the portfolio</h2>
+			<p class="section__body">
+				The design tokens below aren't just documentation — they demonstrate my ability to systematize visual decisions. Grounded in <span style="color: var(--monet-lavender-deep); font-weight: 500;">Refactoring UI</span> tactics, Monet's <em>perception philosophy</em>, and Wada's <em>A Dictionary of Color Combinations</em>.
+			</p>
+
+			<h3 style="font-family: var(--font-display); font-size: 1.05rem; margin-top: var(--space-xl); margin-bottom: var(--space-md); color: var(--text-primary);">Color Palette — from Water Lilies</h3>
+			<div class="token-palette">
+				<div class="token-row">
+					<div class="token-swatch">
+						<div class="token-swatch__color" style="background: linear-gradient(135deg, var(--monet-lavender-pale), var(--monet-lavender), var(--monet-lavender-deep));"></div>
+						<div class="token-swatch__name">Lavender</div>
+						<div class="token-swatch__hex">#b8a9d4</div>
+					</div>
+					<div class="token-swatch">
+						<div class="token-swatch__color" style="background: linear-gradient(135deg, #e0baba, var(--monet-rose), var(--monet-rose-deep));"></div>
+						<div class="token-swatch__name">Rose</div>
+						<div class="token-swatch__hex">#d4a0a0</div>
+					</div>
+					<div class="token-swatch">
+						<div class="token-swatch__color" style="background: linear-gradient(135deg, #e8d4bc, var(--monet-gold), var(--monet-gold-deep));"></div>
+						<div class="token-swatch__name">Gold</div>
+						<div class="token-swatch__hex">#d4b896</div>
+					</div>
+					<div class="token-swatch">
+						<div class="token-swatch__color" style="background: linear-gradient(135deg, #c8d5c4, var(--monet-sage), var(--monet-sage-deep));"></div>
+						<div class="token-swatch__name">Sage</div>
+						<div class="token-swatch__hex">#a8b5a0</div>
+					</div>
+					<div class="token-swatch">
+						<div class="token-swatch__color" style="background: linear-gradient(135deg, #d0dce6, var(--monet-pond), var(--monet-pond-deep));"></div>
+						<div class="token-swatch__name">Pond</div>
+						<div class="token-swatch__hex">#8b9ab0</div>
+					</div>
+					<div class="token-swatch">
+						<div class="token-swatch__color" style="background: var(--bg-canvas); border: 1px solid rgba(184,169,212,0.15);"></div>
+						<div class="token-swatch__name">Canvas</div>
+						<div class="token-swatch__hex">#f5f0eb</div>
+					</div>
+				</div>
+			</div>
+
+			<h3 style="font-family: var(--font-display); font-size: 1.05rem; margin-top: var(--space-xl); margin-bottom: var(--space-md); color: var(--text-primary);">Typography</h3>
+			<div class="type-grid">
+				<div class="type-card">
+					<div class="type-card__sample">
+						<span class="type-card__sample--display">Aa</span>
+					</div>
+					<div class="type-card__name">Space Grotesk</div>
+					<div class="type-card__use">Display, headings — structure</div>
+				</div>
+				<div class="type-card">
+					<div class="type-card__sample">
+						<span class="type-card__sample--serif">Aa</span>
+					</div>
+					<div class="type-card__name">Cormorant Garamond</div>
+					<div class="type-card__use">Subtitles, quotes — atmosphere</div>
+				</div>
+				<div class="type-card">
+					<div class="type-card__sample">
+						<span class="type-card__sample--mono">Aa</span>
+					</div>
+					<div class="type-card__name">JetBrains Mono</div>
+					<div class="type-card__use">Tags, labels — precision</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- === CONTACT === -->
+	<hr class="divider">
+	<section id="contact" class="section reveal" aria-labelledby="contact-title">
+		<div class="container container--narrow">
+			<div class="section__label">Contact</div>
+			<h2 id="contact-title" class="section__title">Let's talk</h2>
+			<p class="section__body">
+				I'm always interested in conversations about community automation, CFD markets, digital sociology, or anything at the intersection of technology and human behavior.
+			</p>
+			<div class="contact-links">
+				<a href="https://t.me/" class="contact-link" target="_blank" rel="noopener noreferrer">
+					Telegram <span class="contact-link__arrow">↗</span>
+				</a>
+				<a href="https://discord.com/" class="contact-link" target="_blank" rel="noopener noreferrer">
+					Discord <span class="contact-link__arrow">↗</span>
+				</a>
+				<a href="https://github.com/" class="contact-link" target="_blank" rel="noopener noreferrer">
+					GitHub <span class="contact-link__arrow">↗</span>
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- === FOOTER === -->
+	<footer class="footer">
+		<div class="container">
+			<div class="footer__inner">
+				<span class="footer__text">painted, not constructed — 2025</span>
+				<a href="#" class="footer__top">↑ Back to top</a>
+			</div>
+		</div>
+	</footer>
+
+	<!-- === SCROLL REVEAL (minimal, like light appearing) === -->
+	<script>
+		// Intersection observer — reveal elements as they enter viewport
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add('visible');
+				}
+			});
+		}, {
+			threshold: 0.15,
+			rootMargin: '0px 0px -50px 0px'
+		});
+
+		document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+		// Nav background on scroll
+		const nav = document.querySelector('.nav');
+		window.addEventListener('scroll', () => {
+			if (window.scrollY > 80) {
+				nav.classList.add('scrolled');
+			} else {
+				nav.classList.remove('scrolled');
+			}
+		}, { passive: true });
+	</script>
+</body>
+</html>
